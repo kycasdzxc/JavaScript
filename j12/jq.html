@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // event attr
+        // window.onload = function() {
+        //     var h1 = document.getElementsByTagName("h1");
+        //     console.log(h1[0]);
+        //     alter(h1[0].innerHTML)
+        //     alter(h1[0].innerText)
+        // }
+
+        // 이벤트 고나련 용어
+        // window.onload = function() {}
+        // window : 이벤트 대상
+        // onload : 이벤트 속성
+        // load : 이벤트 이름
+        // function() {} : 이벤트 핸들러(리스너)
+        
+        $(function() {
+            alert($("h1").text());
+            $("h1").html("안녕 세상").css("color", "red").hover(function() {
+                $(this).css("text-decoration", "underline");
+            }, function() {
+                $(this).css({textDecoration:"none"});
+            }).click(function() {
+                // alert($(this).text());
+                location.href = "https://www.naver.com"
+            });
+
+            setInterval(function() {
+                $("p").text(new Date());
+            }, 1000);
+
+        });
+    </script>
+    
+</head>
+<body>
+    <!-- J-QUARY : DOM 탐색이 목적 -->
+    <h1>hello <span>world</span></h1>
+    <p></p>
+</body>
+</html>

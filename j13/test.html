@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // 비동기처리, 비동기통신을 이용하여 xml 출력하기
+        $(function() {
+            $("button").click(function() {
+                $.ajax({
+                    url : "student.xml",
+                    success : function(data) {
+                        console.log(data);
+                        var str = "<table border='1'>";
+                        $(data).find("student").each(function() {
+                            var no = $(this).find("no").text();
+                            var name = $(this).find("name").text();
+                            var kor = $(this).find("kor").text();
+
+                            str += "<tr>"
+                            str += "<td>" + no + "</td>"
+                            str += "<td>" + name + "</td>"
+                            str += "<td>" + kor + "</td>"
+                            str += "</tr>"
+                        })
+                        str += "</table>";
+                        $("body").append(str);
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <button>버튼</button>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<students>
+    <student>
+        <no>1</no>
+        <name>1길동이</name>
+        <kor>100</kor>
+        <eng>100</eng>
+        <mat>100</mat>
+    </student>
+    <student>
+        <no>2</no>
+        <name>2길동이</name>
+        <kor>100</kor>
+        <eng>100</eng>
+        <mat>100</mat>
+    </student>
+    <student>
+        <no>3</no>
+        <name>3길동이</name>
+        <kor>100</kor>
+        <eng>100</eng>
+        <mat>100</mat>
+    </student>
+</students>
